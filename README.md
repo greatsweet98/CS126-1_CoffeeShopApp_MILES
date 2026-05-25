@@ -1,1 +1,1 @@
-# CS126-1_ProfileCard_MILES
+# CS126-1_CoffeeShopApp_MILES
