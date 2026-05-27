@@ -5,27 +5,27 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const menuItems = [
   {id: '1', category: 'Hot Beverages', name: 'Classic Brewed Coffee', price: '$2.00',
     desc: 'Our classic coffee brewed from brown Bonesborough beans!'},
-  {id: '2', category: 'Hot Beverages', name: 'Blueberry Lung Latte', price: '$5.15',
-    desc: '?'},
-  {id: '3', category: 'Hot Beverages', name: 'Vanilla Magical Cappucino', price: '$3.95',
-    desc: '?'}, 
+  {id: '2', category: 'Hot Beverages', name: 'Vanilla Magical Latte', price: '$5.15',
+    desc: 'Fresh vanilla latte with a magical sprinkle of colored cocoa powder!'},
+  {id: '3', category: 'Hot Beverages', name: 'Blueberry Lung Cappucino', price: '$3.95',
+    desc: 'Your day-to-day cappucino filled with blueberries.'}, 
   {id: '4', category: 'Hot Beverages', name: 'Lemon Elixir Tea', price: '$3.45',
-    desc: '?'},
+    desc: 'A hot tea smothered with fresh lemon in a tea bag!'},
   {id: '5', category: 'Cold Chills', name: 'Apple Blood Frappe', price: '$4.95',
-    desc: '?'},
+    desc: 'Best-seller beverage of the year! Frappucino full of apples all around!'},
   {id: '6', category: 'Cold Chills', name: 'Orange Blossom Iced Tea', price: '$4.20',
-    desc: '?'},
+    desc: 'For summertime! Orange-flavored cold tea topped with a blossom flower!'},
   {id: '7', category: 'Best-Selling Meals', name: 'Grape Fairy Pie', price: '$3.50',
-    desc: '?'},
+    desc: 'Good for 1, this sweetening pie full of grapes is good pairing with our most popular drinks!'},
   {id: '8', category: 'Best-Selling Meals', name: 'Blueberry Lung Muffin', price: '$2.65',
-    desc: '?'},
+    desc: 'Want something very light to eat? Try our blueburry stuffed muffin topped with blueberry sauce!'},
 ];
 const Stack = createNativeStackNavigator();
 
 function HomeScreen({ navigation }: any) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>The Menu</Text>
+    <View style={styles.menuContainer}>
+      <Text style={styles.menuHeading}>The Menu</Text>
 
       {/* FlatList renders the menuItems array as a scrollable list */}
       <FlatList
@@ -33,13 +33,13 @@ function HomeScreen({ navigation }: any) {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <TouchableOpacity
-            style={styles.item}
+            style={styles.menuItem}
             activeOpacity={0.75}
             onPress={() => navigation.navigate('Detail', { coffee: item })}
           >
-            <Text style={styles.category}>{item.category}</Text>
-            <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.price}>{item.price}</Text>
+            <Text style={styles.menuItemCategory}>{item.category}</Text>
+            <Text style={styles.menuItemName}>{item.name}</Text>
+            <Text style={styles.menuItemPrice}>{item.price}</Text>
           </TouchableOpacity>
         )}
       />
@@ -64,7 +64,7 @@ function DetailScreen({ route, navigation }: any) {
         activeOpacity={0.8}
         onPress={() => navigation.goBack()}
       >
-        <Text style={styles.backButtonText}>← Back to Menu</Text>
+        <Text style={styles.backButtonText}>← Back to The Menu</Text>
       </TouchableOpacity>
     </View>
   );
@@ -89,19 +89,19 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  menuContainer: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#FDF6EE',
+    backgroundColor: '#ffecfc',
   },
-  heading: {
+  menuHeading: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
     color: '#1e008a',
   },
-  item: {
-    backgroundColor: '#FFF8F2',
+  menuItem: {
+    backgroundColor: '#f5e3ff',
     borderRadius: 12,
     padding: 16,
     marginBottom: 12,
@@ -112,19 +112,19 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     elevation: 2,
   },
-  category: {
+  menuItemCategory: {
     fontSize: 12,
-    color: '#888',
+    color: '#a42e94',
     marginBottom: 4,
     textTransform: 'uppercase',
     letterSpacing: 1,
   },
-  name: {
+  menuItemName: {
     fontSize: 18,
     fontWeight: '600',
     color: '#00757b',
   },
-  price: {
+  menuItemPrice: {
     fontSize: 14,
     color: '#00853e',
     marginTop: 4,
@@ -134,12 +134,12 @@ const styles = StyleSheet.create({
   detailContainer: {
     flex: 1,
     padding: 28,
-    backgroundColor: '#FDF6EE',
+    backgroundColor: '#41203c',
     justifyContent: 'center',
   },
   detailCategory: {
     fontSize: 13,
-    color: '#888',
+    color: '#ff51e8',
     textTransform: 'uppercase',
     letterSpacing: 1.5,
     marginBottom: 8,
@@ -147,30 +147,30 @@ const styles = StyleSheet.create({
   detailName: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: '#3E1F00',
+    color: '#7df9ff',
     marginBottom: 8,
   },
   detailPrice: {
     fontSize: 22,
-    color: '#C1440E',
+    color: '#51c286',
     fontWeight: '600',
     marginBottom: 20,
   },
   detailDesc: {
     fontSize: 16,
-    color: '#555',
+    color: '#7e4575',
     lineHeight: 24,
     marginBottom: 40,
   },
   backButton: {
-    backgroundColor: '#3E1F00',
+    backgroundColor: '#002e83',
     paddingVertical: 14,
     paddingHorizontal: 28,
     borderRadius: 10,
     alignItems: 'center',
   },
   backButtonText: {
-    color: '#FDF6EE',
+    color: '#538fff',
     fontSize: 16,
     fontWeight: '600',
   },
