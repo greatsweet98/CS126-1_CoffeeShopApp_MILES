@@ -1,7 +1,11 @@
-import { View, Text, FlatList, Button, Alert, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, Button, Alert, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
 
 // ─── Profile Screen ───────────────────────────────────────────────────────────
 export default function ProfileScreen() {
+  useEffect(() => {
+  loadProfile();
+  }, []);
+
   return (
     <View style={styles.container}>
       <Text style={styles.avatar}>👤</Text>

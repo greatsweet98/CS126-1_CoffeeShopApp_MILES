@@ -23,6 +23,14 @@ const menuItems = [
 const Stack = createNativeStackNavigator();
 
 function HomeScreen({ navigation }: any) {
+  const [menuItems, setMenuItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  
+  useEffect(() => {
+  loadMenu();
+  }, []);
+
   return (
     <View style={styles.menuContainer}>
       <Text style={styles.menuHeading}>The Menu</Text>
