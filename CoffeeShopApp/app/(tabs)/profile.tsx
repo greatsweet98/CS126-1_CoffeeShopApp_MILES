@@ -1,71 +1,104 @@
-import { View, Text, FlatList, Button, Alert, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
-// ─── Profile Screen ───────────────────────────────────────────────────────────
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 export default function ProfileScreen() {
+  const [name, setName] = useState('');
+
   useEffect(() => {
-  loadProfile();
+    loadProfile();
   }, []);
+
+  async function saveProfile() {
+    await AsyncStorage.setItem(
+      'profileName',
+      name
+    );
+  }
+
+  async function loadProfile() {
+    const savedName =
+      await AsyncStorage.getItem('profileName');
+
+    if (savedName) {
+      setName(savedName);
+    }
+  }
 
   return (
     <View style={styles.container}>
       <Text style={styles.avatar}>👤</Text>
-      <Text style={styles.name}>J.M.D.M.</Text>
-      <Text style={styles.email}>mustacheguyjmgaming@gmail.com</Text>
 
-      <View style={styles.card}>
-        <Text style={styles.label}>Member Since</Text>
-        <Text style={styles.value}>May 2026</Text>
-      </View>
+      <Text style={styles.title}>
+        Profile Settings
+      </Text>
 
-      <View style={styles.card}>
-        <Text style={styles.label}>Total Orders</Text>
-        <Text style={styles.value}>0</Text>
-      </View>
+      <TextInput
+        style={styles.input}
+        placeholder="Enter profile name"
+        value={name}
+        onChangeText={setName}
+      />
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={saveProfile}
+      >
+        <Text style={styles.buttonText}>
+          Save Profile
+        </Text>
+      </TouchableOpacity>
+
+      <Text style={styles.currentName}>
+        Current Name: {name}
+      </Text>
     </View>
   );
 }
 
-// ─── Styles ──────────────────────────────────────────────────────────────────
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    paddingTop: 60,
+    padding: 20,
     backgroundColor: '#FDF6EE',
   },
   avatar: {
     fontSize: 64,
-    marginBottom: 12,
+    textAlign: 'center',
+    marginBottom: 20,
   },
-  name: {
-    fontSize: 22,
+  title: {
+    fontSize: 24,
     fontWeight: 'bold',
-    color: '#3E1F00',
+    marginBottom: 20,
+    textAlign: 'center',
   },
-  email: {
-    fontSize: 14,
-    color: '#888',
-    marginBottom: 30,
+  input: {
+    borderWidth: 1,
+    borderColor: '#999',
+    borderRadius: 8,
+    padding: 10,
+    marginBottom: 15,
   },
-  card: {
-    width: '80%',
-    backgroundColor: '#FFF8F2',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 12,
-    borderLeftWidth: 4,
-    borderLeftColor: '#C1440E',
+  button: {
+    backgroundColor: '#C1440E',
+    padding: 12,
+    borderRadius: 8,
   },
-  label: {
-    fontSize: 12,
-    color: '#888',
-    textTransform: 'uppercase',
-    letterSpacing: 1,
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
   },
-  value: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#3E1F00',
-    marginTop: 4,
+  currentName: {
+    marginTop: 20,
+    textAlign: 'center',
+    fontSize: 16,
   },
 });
