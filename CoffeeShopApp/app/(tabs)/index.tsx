@@ -66,35 +66,10 @@ export default function MenuScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: '#FDF6EE',
-  },
-  centered: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
-    color: '#3E1F00',
-  },
-  card: {
-    backgroundColor: '#FFF8F2',
-    padding: 12,
-    marginBottom: 10,
-    borderRadius: 10,
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  price: {
-  marginTop: 8,
-  fontWeight: 'bold',
-  color: '#1A4D2E',
-  },
+  container: {flex: 1, padding: 16, backgroundColor: '#FDF6EE',},
+  centered: {flex: 1, justifyContent: 'center', alignItems: 'center',},
+  title: {fontSize: 24, fontWeight: 'bold', marginBottom: 16, color: '#3E1F00',},
+  card: {backgroundColor: '#FFF8F2', padding: 12, marginBottom: 10, borderRadius: 10,},
+  name: { fontSize: 18, fontWeight: 'bold',},
+  price: { marginTop: 8, fontWeight: 'bold', color: '#1A4D2E',},
 });
