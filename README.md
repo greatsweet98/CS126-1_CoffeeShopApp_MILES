@@ -1,2 +1,2 @@
 # CS126-1_CoffeeShopApp_MILES
-I've made an app for an opened Coffee Shop! I also extended it with more tabs and more TOH & KOG-coded. I've also already desc and adjusted the price of the coffee menu items! I also upgraded it with loading effects! Very stressful rn.
+I've made an app for an opened Coffee Shop! I also extended it with more tabs and more TOH & KOG-coded. I've also already desc and adjusted the price of the coffee menu items! I also upgraded it with loading effects! Very stressful rn. Okay I'm finally done with it.
