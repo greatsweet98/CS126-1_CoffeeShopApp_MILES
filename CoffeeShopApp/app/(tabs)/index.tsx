@@ -1,31 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import {
-  ActivityIndicator,
-  FlatList,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { ActivityIndicator, FlatList, StyleSheet, Text, View, } from 'react-native';
 
 const coffeeMenu = [
-  {
-    id: '1',
-    name: 'Classic Brewed Coffee',
-    desc: 'Our classic coffee brewed from brown Bonesborough beans!',
-    price: '$2.00',
-  },
-  {
-    id: '2',
-    name: 'Vanilla Magical Latte',
-    desc: 'Fresh vanilla latte with a magical sprinkle of colored cocoa powder!',
-    price: '$5.15',
-  },
-  {
-    id: '3',
-    name: 'Blueberry Lung Cappuccino',
-    desc: 'Your day-to-day cappuccino filled with blueberries.',
-    price: '$3.95',
-  },
+  { id: '1', name: 'Classic Brewed Coffee', desc: 'Our classic coffee brewed from brown Bonesborough beans!', price: '$2.00',},
+  { id: '2', name: 'Vanilla Magical Latte', desc: 'Fresh vanilla latte with a magical sprinkle of colored cocoa powder!', price: '$5.15',},
+  { id: '3', name: 'Blueberry Lung Cappuccino', desc: 'Your day-to-day cappuccino filled with blueberries.', price: '$3.95',},
   {id: '4', category: 'Hot Beverages', name: 'Lemon Elixir Tea', price: '$3.45',
     desc: 'A hot tea smothered with fresh lemon in a tea bag!'},
   {id: '5', category: 'Hot Beverages', name: "Golden Guard's Signature Mint", price: '$4.10',
