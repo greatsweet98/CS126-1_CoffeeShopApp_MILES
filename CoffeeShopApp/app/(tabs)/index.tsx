@@ -120,10 +120,10 @@ export default function MenuScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>☕ Coffee Menu</Text>
+      <Text style={styles.title}>🦴☕ Bonesborough Coffee & Park Planet Cafe 🚀🏰</Text>
 
-      <Text style={{ fontWeight: 'bold', marginTop: 10 }}>
-        ❤️ Favorites: {favorites.length}
+      <Text style={{ fontWeight: 'bold', marginTop: 10, marginBottom: 10, color: '#9d00ff' }}>
+        ❤️ Favorited Items: {favorites.length}
       </Text>
 
       <FlatList
@@ -132,7 +132,7 @@ export default function MenuScreen() {
         renderItem={({ item }) => (
           <View style={styles.card}>
             <Text style={styles.name}>{item.name}</Text>
-            <Text>{item.desc}</Text>
+            <Text style={styles.desc}>{item.desc}</Text>
             <Text style={styles.price}>{item.price}</Text>
 
             <TouchableOpacity
@@ -149,12 +149,13 @@ export default function MenuScreen() {
   
 
 const styles = StyleSheet.create({
-  container: {flex: 1, padding: 16, backgroundColor: '#FDF6EE',},
+  container: {flex: 1, padding: 16, backgroundColor: '#f8fffe',},
   centered: {flex: 1, justifyContent: 'center', alignItems: 'center',},
-  title: {fontSize: 24, fontWeight: 'bold', marginBottom: 16, color: '#3E1F00',},
-  card: {backgroundColor: '#FFF8F2', padding: 12, marginBottom: 10, borderRadius: 10,},
-  name: { fontSize: 18, fontWeight: 'bold', color:'#ee00ff'},
-  price: { marginTop: 8, fontWeight: 'bold', color: '#1A4D2E',},
-  favoriteButton: {backgroundColor: '#9e5353'},
-  favoriteButtonText: {color: '#4b0000'},
+  title: {fontSize: 24, fontWeight: 'bold', marginTop: 24, marginBottom: 16, color: '#000477',},
+  card: {backgroundColor: '#033634', padding: 12, marginBottom: 10, borderRadius: 14,},
+  name: { fontSize: 18, fontWeight: 'bold', color:'#00ddff'},
+  desc: {color: '#ffc2f7'},
+  price: { marginTop: 8, fontWeight: 'bold', color: '#4050ff',},
+  favoriteButton: {marginTop: 5, padding: 5, backgroundColor: '#2a0046', borderRadius: 2},
+  favoriteButtonText: {color: '#ff00d9', textAlign: 'center'},
 });

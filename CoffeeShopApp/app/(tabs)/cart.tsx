@@ -31,8 +31,8 @@ export default function CartScreen() {
   }
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>🛒 Cart Screen</Text>
-      <TextInput style={styles.input} placeholder="Special Instructions..." value={note} onChangeText={setNote} />
+      <Text style={styles.title}>🛒 Your Order Cart 💰</Text>
+      <TextInput style={styles.input} placeholder="Order suggestions & adjustments....?" value={note} onChangeText={setNote} />
       <TouchableOpacity style={styles.button} onPress={saveNote}>
         <Text style={styles.buttonText}>Save Note</Text>
       </TouchableOpacity>
@@ -49,11 +49,11 @@ export default function CartScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {flex: 1, padding: 20, backgroundColor: '#FDF6EE',},
-  title: {fontSize: 24, fontWeight: 'bold', marginBottom: 20,},
-  input: {borderWidth: 1, borderColor: '#999', padding: 10, borderRadius: 8, marginBottom: 15,},
-  button: {backgroundColor: '#1A4D2E', padding: 12, borderRadius: 8,},
-  buttonText: {color: 'white', textAlign: 'center',},
-  savedBox: {marginTop: 20, backgroundColor: '#EAF3EC', padding: 10, borderRadius: 8,},
-  savedTitle: {fontWeight: 'bold',},
+  container: {flex: 1, padding: 20, backgroundColor: '#f8fffe',},
+  title: {fontSize: 24, fontWeight: 'bold', marginTop: 24, marginBottom: 150, color: 'rgb(52, 0, 67)'},
+  input: {borderWidth: 1, borderColor: '#999', padding: 10, borderRadius: 5, marginBottom: 15,},
+  button: {backgroundColor: '#033634', padding: 12, borderRadius: 10,},
+  buttonText: {textAlign: 'center', color: '#dfbaff'},
+  savedBox: {marginTop: 20, backgroundColor: '#d3f3f2', padding: 10, borderRadius: 2,},
+  savedTitle: {fontWeight: 'bold', color: '#450471'},
 });

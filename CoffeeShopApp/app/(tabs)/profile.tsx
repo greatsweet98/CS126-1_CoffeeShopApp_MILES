@@ -20,7 +20,7 @@ export default function ProfileScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.avatar}>👤</Text>
-      <Text style={styles.title}>Profile Settings</Text>
+      <Text style={styles.title}>‧͙⁺˚*･༓☾ Your Profile ☽༓･*˚⁺‧͙</Text>
 
       <TextInput style={styles.input}
         placeholder="Enter profile name"
@@ -30,17 +30,17 @@ export default function ProfileScreen() {
       <TouchableOpacity style={styles.button} onPress={saveProfile}>
         <Text style={styles.buttonText}>Save Profile</Text>
       </TouchableOpacity>
-      <Text style={styles.currentName}>Current Name: {name}</Text>
+      <Text style={styles.currentName}>Current saved name: {name}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {flex: 1, padding: 20, backgroundColor: '#FDF6EE',},
-  avatar: {fontSize: 64, textAlign: 'center', marginBottom: 20,},
-  title: {fontSize: 24, fontWeight: 'bold', marginBottom: 20, textAlign: 'center',},
-  input: {borderWidth: 1, borderColor: '#999', borderRadius: 8, padding: 10, marginBottom: 15,},
-  button: {backgroundColor: '#C1440E', padding: 12, borderRadius: 8,},
-  buttonText: {color: 'white', textAlign: 'center',},
-  currentName: {marginTop: 20, textAlign: 'center', fontSize: 16,},
+  container: {flex: 1, padding: 20, backgroundColor: '#f8fffe',},
+  avatar: {fontSize: 64, textAlign: 'center', marginBottom: 20, marginTop: 24},
+  title: {fontSize: 24, fontWeight: 'bold', marginBottom: 34, textAlign: 'center',},
+  input: {borderWidth: 1, borderColor: '#999', borderRadius: 5, padding: 10, marginBottom: 15,},
+  button: {backgroundColor: '#033634', padding: 12, borderRadius: 10,},
+  buttonText: {color: '#55a5ff', textAlign: 'center',},
+  currentName: {marginTop: 15, textAlign: 'center', fontSize: 12,},
 });
